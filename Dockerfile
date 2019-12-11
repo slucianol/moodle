@@ -8,8 +8,6 @@ RUN yum install -y iptables.i686 iptables-services iptables-utils
 RUN yum install -y nginx
 RUN chkconfig iptables on
 RUN chkconfig nginx on
-RUN systemctl start nginx
-RUN systemctl start iptables
 RUN mv /etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf.OLD
 
 COPY docker-files/moodle.conf /etc/nginx/conf.d/
