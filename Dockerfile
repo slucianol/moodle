@@ -3,7 +3,7 @@ WORKDIR /var/websites
 
 COPY docker-files/nginx.repo /etc/yum.repos.d/
 
-RUN 'yum update -y"; \
+RUN "yum update -y"; \
 "yum install -y iptables.i686 iptables-services iptables-utils"; \
 "yum install -y nginx"; \
 "chkconfig iptables on"; \
