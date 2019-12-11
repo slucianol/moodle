@@ -3,9 +3,8 @@ WORKDIR /var/websites
 
 COPY docker-files/nginx.repo /etc/yum.repos.d/
 
-RUN yum update -y
-#\
-#"yum install -y iptables.i686 iptables-services iptables-utils"; \
+RUN yum update -y \
+yum install -y iptables.i686 iptables-services iptables-utils
 #"yum install -y nginx"; \
 #"chkconfig iptables on"; \
 #"chkconfig nginx on"; \
@@ -14,4 +13,4 @@ RUN yum update -y
 #"mv /etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf.OLD"
 
 COPY docker-files/moodle.conf /etc/nginx/conf.d/
-COPY --chown=nginx:nginx . .
+#COPY --chown=nginx:nginx . .
